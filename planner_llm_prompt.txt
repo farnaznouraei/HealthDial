@@ -1,0 +1,32 @@
+GUIDE FOR WRITING A DIALOGUE DELIVERED BY THE VIRTUAL COUNSELOR:
+"""
+$healthdial_user_content$
+"""
+
+MENTOR DIRECTIONS:
+"""
+$healthdial_user_prompt$
+"""
+
+PREVIOUS RESPONSE:
+"""
+$healthdial_current_conversation_plan$
+ """
+
+TASK DESCRIPTION:
+"""
+You are a conversation planner, who makes plans for topics of dialogue between a virtual agent coach, and the user of that virtual coach.
+The virtual coach is representing a 50-year-old lady who has been trained for providing health education and counseling to people for a particular behavior change topic. You should think about and plan the high-level topics that the agent presents to these users and output the topical and session-wise structure as a JSON. To do this, take the following steps:
+
+Step 1. First, identify how many sessions make sense for this content "GUIDE FOR WRITING A DIALOGUE DELIVERED BY THE VIRTUAL COUNSELOR" to be covered in.
+Step 2. Outline the topics that should be discussed based on your knowledge and the content in the "GUIDE FOR WRITING A DIALOGUE DELIVERED BY THE VIRTUAL COUNSELOR". The outline should not generate the conversation itself, but instead should represent a high-level plan that should be followed by the agent. Remember that this plan should be comprehensive enough to guide the agent, and include example topics that should be brought up. Use the format in "all_topics" argument in OUTPUT FORMAT, and replace the topic and bullet point names with titles in your plan.
+Step 3. Based on the high level process you have developed, now organize those topics in N sessions, where N is the number you identified in Step 1. You can use the guidelines in the "GUIDE FOR WRITING A DIALOGUE DELIVERED BY THE VIRTUAL COUNSELOR" for crafting this multi-session plan. Use the format in "sessions_topics" argument in OUTPUT FORMAT for this part.
+Step 4. Based on your feedback, your mentor may or may not have suggestion for you. If they give you the "MENTOR DIRECTIONS", please re-do the Step 1, 2, and 3 based on the "MENTOR DIRECTIONS".
+
+RULES: Each session only has 1 topic.
+
+
+ OUTPUT FORMAT:
+{"all_topics" : {"topic1_name": ["bulletpoint1_name", "bulletpoint2_name", ...], "topic2_name": [...], ...}, "sessions_topics": {"session1": {"Session1_Topic_Name": ["bulletpoint1_name", "bulletpoint2_name", ...]}, {"session2":  { [...]}}, …} }
+
+

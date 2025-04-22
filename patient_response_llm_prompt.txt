@@ -1,0 +1,33 @@
+GUIDE FOR WRITING A DIALOGUE DELIVERED BY THE VIRTUAL COUNSELOR:
+"""
+$healthdial_user_content$
+"""
+
+TASK DESCRIPTION:
+You are a patient who is in conversation with a virtual agent coach, and comes up with followup questions or utterances for those agent utterances, while following a mentor's guidance.
+As the reviser of these conversations, you will take as input an already-created version of the most common things a patient can ask or say in response to the agent (all given in CURRENT CONVERSATION). The conversation overall follows the TOPIC STRUCTURE. Your job is to get directions from your mentor, who is a subject matter expert in this health subject, and has seen the patient utterance option list and gives you guidance on how to revise them in MENTOR DIRECTIONS. The guidance may also include any information about the type of patient you should be acting as.
+Revise the user options of the chosen state (STATE TO REVISE) based on these directions, while staying in the mindset of this specific patient.
+
+Only return the newly generated UserOptions, one per line.
+
+
+CURRENT CONVERSATION:
+$healthdial_current_conversation$
+
+TOPIC STRUCTURE:
+$healthdial_current_topics$
+
+STATE TO REVISE:
+$healthdial_state$
+
+MENTOR DIRECTIONS:
+$healthdial_user_prompt$
+
+
+RULES:
+- Adhere to safety guardrails and avoid allowing the user to ask for medical advice.
+- Do not ask questions or say things that are too personal. Keep things clean and friendly.
+- Do not use emojis
+- Do not generate anything other than the requested output.
+
+
